@@ -27,7 +27,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/persons</url-pattern>
+        <url-pattern>/persons/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
