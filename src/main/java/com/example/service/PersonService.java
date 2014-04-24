@@ -10,4 +10,6 @@ public interface PersonService {
     public void addPerson(Person person);
     public List<Person> listPeople();
     public void removePerson(Integer id);
+    public Person findPerson(Integer id);
+    public Person savePerson(Person person);    
 }

@@ -38,36 +38,16 @@
             <div class="page-header">
                 <h1>Simple CRUD Page</h1>
             </div>
-            <form:form method="post" action="add" commandName="person" class="form-vertical">
-
+            <form:form method="post" action="savePerson/" commandName="person" class="form-vertical">
+				<form:hidden path="id"/>
                 <form:label path="firstName">First Name</form:label>
                 <form:input path="firstName" />
                 <form:label path="lastName">Last Name</form:label>
                 <form:input path="lastName" />
-                <input type="submit" value="Add Person" class="btn"/>
+                <input type="submit" value="Save Changes" class="btn"/>
             </form:form>
 
 
-            <c:if  test="${!empty peopleList}">
-                <h3>People</h3>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${peopleList}" var="person">
-                        <tr>
-                            <td>${person.lastName}, ${person.firstName} ( ${person.firstName} ${person.lastName} )</td>
-                            <td><a href="edit/${person.id}">Edit</a></td>
-                            <td><form action="delete/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </c:if>
         </div>
     </div>
 </div>

@@ -38,4 +38,15 @@ public class PersonServiceImpl implements PersonService {
         }
     }
     
+    @Transactional
+    public Person findPerson(Integer id){
+        Person person = em.find(Person.class, id);
+        return person;
+    }
+    
+    @Transactional
+    public Person savePerson(Person person){
+        return em.merge(person);
+    }
+    
 }
