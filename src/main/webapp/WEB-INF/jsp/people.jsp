@@ -38,6 +38,9 @@
             <div class="page-header">
                 <h1>Simple CRUD Page</h1>
             </div>
+            <div style="color:blue"">
+            	${message}
+            </div>
             <form:form method="post" action="add" commandName="person" class="form-vertical">
 
                 <form:label path="firstName">First Name</form:label>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.FlashMap;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.model.Person;
 import com.example.service.PersonService;
@@ -61,10 +62,12 @@ public class PersonController {
     }
     
     @RequestMapping("/edit/savePerson/")
-    public String savePerson(@ModelAttribute("person") Person person){
+    public String savePerson(@ModelAttribute("person") Person person, final RedirectAttributes redirectAttributes){
     	System.out.println( "in savePerson - id is " + person.getId()) ;
     	
     	personService.savePerson(person);
+    	redirectAttributes.addFlashAttribute("message", "changes have been saved");
+    	
     	return "redirect:/people/";
     }
 }
