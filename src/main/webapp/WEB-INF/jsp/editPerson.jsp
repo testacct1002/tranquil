@@ -39,7 +39,10 @@
                 <h1>Simple CRUD Page</h1>
             </div>
             <form:form method="post" action="savePerson/" commandName="person" class="form-vertical">
-				<form:hidden path="id"/>
+				<form:label path="personId">ID</form:label>
+				<form:input path="personId" readonly="true"/>
+				
+				
                 <form:label path="firstName">First Name</form:label>
                 <form:input path="firstName" />
                 <form:label path="lastName">Last Name</form:label>
