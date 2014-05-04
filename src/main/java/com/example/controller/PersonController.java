@@ -37,7 +37,7 @@ public class PersonController {
     	Address address = new Address();
     	address.setZip("11111");
     	address.setPerson(person);
-    	List<Address> addressList = new ArrayList<>();
+    	List<Address> addressList = new ArrayList<Address>();
     	addressList.add(address);
     	person.setAddresses(addressList);
     	
